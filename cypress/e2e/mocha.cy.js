@@ -5,17 +5,12 @@ describe("Login feature test ", () => {
   //Automation tests = finding Elements + Actions + Assertions
 
   it("it should visit the login page correctly on ", function () {
-    //cy.get("css selector")
     cy.visit("cypress/index.html");
-
-    //grandparent
-    //works and correct result
-    cy.get(".course-list > .list1");
-    //this works, but does not give correct result
-    cy.get(".course-container, .list1");
-    //this works and gives the result
-    cy.get(".course-list").find(".list1");
-    //this does not work
-    cy.get(".course-container").find(".list1");
+    cy.get(".course-list .list1").next(); //this would select selenium
+    cy.get(".course-list .list2").nextAll(); //now we can select all courses we need
+    cy.get(".course-list .list2").nextUntil(".list7"); //now we add a limit
+    cy.get(".course-list .list3").prev();
+    cy.get(".course-list .list7").prevAll(); //this selcts all elments above 7
+    cy.get(".course-list .list7").prevUntil(".list3");
   });
 });
