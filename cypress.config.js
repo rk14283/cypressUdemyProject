@@ -7,4 +7,6 @@ module.exports = defineConfig({
     },
     //  baseUrl: "http://cypress/index.html",
   },
+  //defaultCommandTimeout: 20000,
+  defaultCommandTimeout: 5000,
 });
